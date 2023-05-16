@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HP Lovecrafter</title>
+    <style>
+      body {
+        background-color: #00FFFF;
+        background-image: url('lightning.png');
+        background-repeat: repeat;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      
+      h1 {
+        font-size: 4em;
+        margin-top: 0;
+        margin-bottom: 0.5em;
+        color: #FF1493;
+      }
+      
+      button {
+        background-color: #FFFFFF;
+        color: #FF1493;
+        font-size: 2em;
+        border-radius: 20px;
+        padding: 20px;
+        border: none;
+        margin-bottom: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="output"></h1>
+    <button onclick="generateName()">Craft!</button>
+    
+    <script>
+// Define arrays of words for each component of the name
+const superlatives = ["Super", "Mega", "Ultimate", "Epic", "Fantastic", "Wondrous", "Maximum", "Incredible", "Phenomenal", "Sensational", "Astonishing"];
+const comfortWords = ["Comfy", "Pleasant", "Mellow", "Cozy", "Snug", "Relaxing", "Soothing"];
+const heatWords = ["Warm", "Hot", "Radiant", "Thermal", "Toast", "Blaze", "Ignite"];
+const pumpWords = ["Circulator", "Distributor", "Mover", "Conveyor", "Transmitter", "Propeller", "Pusher", "Herder", "Regulator", "Balancer"];
+const acWords = ["Cool", "Chill", "Frost", "Breeze", "Air", "Vent"];
+const furnaceWords = ["Heater", "Radiator", "Boiler", "Furnace", "Fireplace", "Stove"];
+const powerWords = ["Blaster", "Dynamo", "Titan", "Crusher", "Dominator", "Avenger", "Mastermind", "Champion", "Vigilante", "Conqueror", "Sentinel", "Enforcer", "Phoenix", "Thunderbolt", "Rampage", "Magician", "Supremo", "Legend", "Wizard"];
+
+// Randomly select a word from each array and concatenate them with a bias towards alliteration
+function generateHeatPumpName() {
+  const superlative = superlatives[Math.floor(Math.random() * superlatives.length)];
+  const comfortWord = comfortWords[Math.floor(Math.random() * comfortWords.length)];
+  const heatWord = heatWords[Math.floor(Math.random() * heatWords.length)];
+  const pumpWord = pumpWords[Math.floor(Math.random() * pumpWords.length)];
+  const acWord = acWords[Math.floor(Math.random() * acWords.length)];
+  const furnaceWord = furnaceWords[Math.floor(Math.random() * furnaceWords.length)];
+
+  // Add some variation by randomly choosing whether to include "AC" or "Furnace"
+  const useAc = Math.random() < 0.5;
+  const useFurnace = Math.random() < 0.5;
+  
+  // Determine the first letter of each chosen word
+  const superlativeFirstLetter = superlative.charAt(0);
+  const comfortFirstLetter = comfortWord.charAt(0);
+  const heatFirstLetter = heatWord.charAt(0);
+  const pumpFirstLetter = pumpWord.charAt(0);
+
+  // Determine the alliteration score based on matching first letters
+  const alliterationScore = [superlativeFirstLetter, comfortFirstLetter, heatFirstLetter, pumpFirstLetter]
+    .reduce((score, letter) => (score + (letter === superlativeFirstLetter)), 0);
+    
+  // Assemble the name with a higher probability of alliteration
+  let name = `${superlative} ${comfortWord} ${heatWord} ${pumpWord}`;
+  if (useAc) {
+    name += ` ${acWords[Math.floor(Math.random() * acWords.length)]}`;
+  }
+  if (useFurnace) {
+    name += ` ${furnaceWord}`;
+  }
+  
+  // If there is alliteration, slightly increase the probability of its occurrence
+  if (alliterationScore > 0 && Math.random() < 0.7) {
+    name = `${super
+
+      
+      function generateName() {
+        // Call the generateHeatPumpName() function from your JavaScript code
+        // ...
+      }
+      
+      function getNextTextColor() {
+        // Call the getNextTextColor() function from your JavaScript code
+        // ...
+      }
+    </script>
+  </body>
+</html>
