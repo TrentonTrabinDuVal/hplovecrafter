@@ -82,14 +82,39 @@ function generateHeatPumpName() {
 
       
       function generateName() {
-        // Call the generateHeatPumpName() function from your JavaScript code
-        // ...
+        const randomHeatWord = heatWords[Math.floor(Math.random() * heatWords.length)];
+        const randomAcWord = acWords[Math.floor(Math.random() * acWords.length)];
+        const randomFurnaceWord = furnaceWords[Math.floor(Math.random() * furnaceWords.length)];
+        const randomComfortWord = comfortWords[Math.floor(Math.random() * comfortWords.length)];
+        const randomPowerWord = powerWords[Math.floor(Math.random() * powerWords.length)];
+        const randomPumpWord = pumpWords[Math.floor(Math.random() * pumpWords.length)];
+        
+        const allWords = [randomHeatWord, randomAcWord, randomFurnaceWord, randomComfortWord, randomPowerWord, randomPumpWord];
+        const alliterationWords = allWords.filter((word, index) => {
+          if (index === 0) {
+            return false;
+          }
+          const previousWord = allWords[index - 1];
+          return word.charAt(0) === previousWord.charAt(0);
+        });
+        
+        const finalWords = alliterationWords.length > 0 ? alliterationWords : allWords;
+        const finalName = randomPowerWord + " " + finalWords[finalWords.length - 1];
+        
+        const output = document
+        .getElementById("output");
+        output.innerText = finalName;
+        output.style.color = getNextTextColor();
       }
       
       function getNextTextColor() {
-        // Call the getNextTextColor() function from your JavaScript code
-        // ...
-      }
+    const colors = ["#FF1493", "#FF8C00", "#00CED1", "#000000"];
+    const output = document.getElementById("output");
+    const currentColor = output.style.color;
+    const currentIndex = colors.indexOf(currentColor);
+    const nextIndex = (currentIndex + 1) % colors.length;
+    return colors[nextIndex];
+  }
     </script>
   </body>
 </html>
