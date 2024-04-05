@@ -45,14 +45,17 @@
         const powerWords = ["Super", "Mega", "Ultra", "Maximum", "Extreme", "Gigantic", "Titanic", "Wondrous", "Wonder", "Wizard"];
         
         // Randomly select a word from each array and concatenate them with a bias towards alliteration
-        function generateName() {
-            const superlative = superlatives[Math.floor(Math.random() * superlatives.length)];
-            const comfortWord = comfortWords[Math.floor(Math.random() * comfortWords.length)];
-            const heatWord = heatWords[Math.floor(Math.random() * heatWords.length)];
-            const pumpWord = pumpWords[Math.floor(Math.random() * pumpWords.length)];
-            const acWord = acWords[Math.floor(Math.random() * acWords.length)];
-            const furnaceWord = furnaceWords[Math.floor(Math.random() * furnaceWords.length)];
-            const powerWord = powerWords[Math.floor(Math.random() * powerWords.length)];
+  const superlative = superlatives[Math.floor(Math.random() * superlatives.length)];
+            const heatOrAcOrFurnaceWord = [heatWords, acWords, furnaceWords, comfortWords][Math.floor(Math.random() * 4)][Math.floor(Math.random() * 7)];
+            const pumpOrPowerWord = [pumpWords, powerWords][Math.floor(Math.random() * 2)][Math.floor(Math.random() * 10)];
+            
+            const name = `${superlative} ${comfortWord} ${heatOrAcOrFurnaceWord} ${pumpOrPowerWord}`;
+                  
+  
+  function generateName() {
+             const superlative = superlatives[Math.floor(Math.random() * superlatives.length)];
+            const heatOrAcOrFurnaceWord = [heatWords, acWords, furnaceWords, comfortWords][Math.floor(Math.random() * 4)][Math.floor(Math.random() * 7)];
+            const pumpOrPowerWord = [pumpWords, powerWords][Math.floor(Math.random() * 2)][Math.floor(Math.random() * 10)];
             
             // Add some variation by randomly choosing whether to include "AC" or "Furnace"
             const useAc = Math.random() < 0.5;
@@ -70,7 +73,7 @@
                 .reduce((score, letter) => (score + (letter === superlativeFirstLetter)), 0);
                 
             // Assemble the name with a higher probability of alliteration
-            let name = `${superlative} ${comfortWord} ${heatWord} ${pumpWord}`;
+            let name = `${superlative} ${heatOrAcOrFurnaceWord} ${pumpOrPowerWord}`;
             if (useAc) {
                 name += ` ${acWords[Math.floor(Math.random() * acWords.length)]}`;
             }
@@ -80,7 +83,7 @@
             
             // If there is alliteration, slightly increase the probability of its occurrence
             if (alliterationScore > 0 && Math.random() < 0.7) {
-                name = `${superlative} ${comfortWord} ${heatWord} ${pumpWord}`;
+                name = `${superlative} ${heatOrAcOrFurnaceWord} ${pumpOrPowerWord}`;
                 if (useAc) {
                     name += ` ${acWords[Math.floor(Math.random() * acWords.length)]}`;
                 }
