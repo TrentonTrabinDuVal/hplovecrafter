@@ -57,13 +57,11 @@
             
             // Determine the first letter of each chosen word
             const superlativeFirstLetter = superlative.charAt(0);
-            const comfortFirstLetter = comfortWord.charAt(0);
-            const heatFirstLetter = heatWord.charAt(0);
-            const pumpFirstLetter = pumpWord.charAt(0);
-            const powerFirstLetter = powerWord.charAt(0);
+            const heatOrAcOrFurnaceFirstLetter = heatOrAcOrFurnaceWord.charAt(0);
+            const pumpOrPowerFirstLetter = pumpOrPowerWord.charAt(0);
             
             // Determine the alliteration score based on matching first letters
-            const alliterationScore = [superlativeFirstLetter, comfortFirstLetter, heatFirstLetter, pumpFirstLetter, powerFirstLetter]
+            const alliterationScore = [superlativeFirstLetter, heatOrAcOrFurnaceFirstLetter, pumpOrPowerFirstLetter]
                 .reduce((score, letter) => (score + (letter === superlativeFirstLetter)), 0);
                 
             // Assemble the name with a higher probability of alliteration
