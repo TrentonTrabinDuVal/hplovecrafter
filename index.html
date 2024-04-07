@@ -68,22 +68,23 @@
                 
             // Assemble the name with a higher probability of alliteration
             let name = `${superlative} ${heatOrAcOrFurnaceWord} ${pumpOrPowerWord}`;
-            if (useAc) {
+           /* if (useAc) {
                 name += ` ${acWords[Math.floor(Math.random() * acWords.length)]}`;
             }
             if (useFurnace) {
                 name += ` ${furnaceWord}`;
-            }
+            } 
+          */
             
             // If there is alliteration, slightly increase the probability of its occurrence
             if (alliterationScore > 0 && Math.random() < 0.7) {
                 name = `${superlative} ${heatOrAcOrFurnaceWord} ${pumpOrPowerWord}`;
-                if (useAc) {
+            /*    if (useAc) {
                     name += ` ${acWords[Math.floor(Math.random() * acWords.length)]}`;
                 }
                 if (useFurnace) {
                     name += ` ${furnaceWord}`;
-                }
+                }  */
             }
             
             const output = document.getElementById("output");
