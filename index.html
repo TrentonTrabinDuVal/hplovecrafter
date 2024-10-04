@@ -28,6 +28,12 @@
         border: none;
         margin-bottom: 1em;
       }
+  .footer{ 
+       position: fixed;     
+       text-align: center;    
+       bottom: 0px; 
+       width: 100%;
+   } 
     </style>
   </head>
   <body>
@@ -37,7 +43,8 @@
     <h1 id="output"></h1>
     <button onclick="generateName()">Craft!</button>
     <p>Ready to get your Captivating Comfort Commander installed? Check out Rewiring America's <a href="https://homes.rewiringamerica.org/personal-electrification-planner">personal electrification planner</a> to see how to get started (and what incentives and rebates might be out there for ya)!</p>
-<script>
+<div class="footer"><p font-size="0.7em">This site is a thing done by <a href="www.trentonduval.com">Trenton DuVal</a></p>p></div>
+  <script>
         // Define arrays of words for each component of the name
         const superlatives = ["Super", "Mega", "Ultimate", "Epic", "Fantastic", "Wondrous", "Maximum", "Incredible", "Phenomenal", "Sensational", "Astonishing"];
         const comfortWords = ["Comfy", "Pleasant", "Mellow", "Cozy", "Snug", "Relaxing", "Soothing", "Warming"];
